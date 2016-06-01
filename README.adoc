@@ -1,0 +1,27 @@
+= hubot-asciidoc
+
+A hubot script that helps you to discover the Asciidoc(tor) markup
+
+Actually it works only with https://slack.com[Slack]
+
+== Installation
+
+In hubot project repositoy, run:
+
+`npm install hubot-asciidoc --save`
+
+Then add **hubot-asciidoc** to your `external-scripts.json`:
+
+```json
+[
+  "hubot-asciidoc"
+]
+```
+
+== Sample Interaction
+
+TODO
+
+== Contribute
+
+TODO

@@ -1,0 +1,30 @@
+{
+    "name": "hubot-asciidoc",
+    "version": "0.1.0",
+    "description": "A hubot script that helps you to discover the Asciidoc(tor) markup",
+    "main": "index.coffee",
+    "scripts": {
+        "test": "echo fixme"
+    },
+    "keywords": [
+        "hubot",
+        "hubot-scripts",
+        "asciidoc",
+        "asciidoctor"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/anthonny/hubot-asciidoc.git"
+    },
+    "bugs": {
+        "url": "https://github.com/anthonny/hubot-asciidoc/issues"
+    },
+    "author": "Anthonny Quérouil <anthonny.querouil@gmail.com> (http://anthonnyquerouil.fr)",
+    "license": "MIT",
+    "devDependencies": {
+        "mocha": "*",
+        "chai": "*",
+        "sinon-chai": "*",
+        "sinon": "*"
+    }
+}
