@@ -1,6 +1,6 @@
 {
     "name": "hubot-asciidoc",
-    "version": "0.1.0",
+    "version": "0.2.0",
     "description": "A hubot script that helps you to discover the Asciidoc(tor) markup",
     "main": "index.coffee",
     "scripts": {

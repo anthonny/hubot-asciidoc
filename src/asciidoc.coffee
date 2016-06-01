@@ -469,11 +469,20 @@ snippets =
     Free use of this software is granted under the terms of the MIT License.
     ```
     """
-sendAttachment = (msg, attachments) ->
-  msg.robot.adapter.customMessage
-    channel: msg.envelope.room
-    username: msg.robot.name
-    attachments: attachments
+sendAttachments = (msg, attachments) ->
+  # The case of Gitter
+  if msg.robot.adapter.constructor.name == "HubotGitter2Adapter"
+    attachments.forEach (attachment) ->
+      msg.send """
+      [#{attachment.title}](#{attachment.title_link})
+      #{attachment.text}
+      """
+  else
+    # By default go slack
+    msg.robot.adapter.customMessage
+      channel: msg.envelope.room
+      username: msg.robot.name
+      attachments: attachments
 
 generateAttachment = (snippet) ->
   attachment=
@@ -512,4 +521,4 @@ module.exports = (robot) ->
 
       attachments = [attachment]
 
-    sendAttachment msg, attachments
+    sendAttachments msg, attachments

@@ -12,6 +12,8 @@ ifdef::env-github,env-browser[:outfilesuffix: .adoc]
 :uri-branch-help: {uri-fork-help}#create-branches
 :uri-pr-help: {uri-help-base}/using-pull-requests
 :uri-gist: https://gist.github.com
+:uri-slack: https://slack.com
+:uri-gitter: https://gitter.im
 // GitHub Admonitions
 ifndef::env-github[:icons: font]
 ifdef::env-github,env-browser[]
@@ -29,14 +31,21 @@ ifdef::env-github[]
 :warning-caption: :warning:
 endif::[]
 
-A hubot script for https://slack.com[Slack] that give you instant access to Asciidoctor syntax with a few keystrokes.
+A hubot script for {uri-slack}[Slack] and {uri-gitter}[Gitter] that give you instant access to http://asciidoctor.org[Asciidoctor] syntax with a few keystrokes.
 
 toc::[]
 
 == Installation
 
-.Pre-requisites
-NOTE: You need `npm` and the https://github.com/slackhq/hubot-slack[SlackHQ SlackBot] installed.
+=== Pre-requisites
+*hubot-asciidoc* works with {uri-slack}[Slack] and {uri-gitter}[Gitter].
+
+You need to install one of the following adapters:
+
+* https://github.com/slackhq/hubot-slack[The Hubot adapter to use with Slack.]
+* https://github.com/huafu/hubot-gitter2[The Hubot adapter to use with Gitter.]
+
+=== Install the hubot-asciidoc script
 
 . Run `npm install hubot-asciidoc --save`.
 . Declare `hubot-asciidoc` in the Hubot `external-scripts.json` file:
@@ -48,19 +57,40 @@ NOTE: You need `npm` and the https://github.com/slackhq/hubot-slack[SlackHQ Slac
 ]
 ----
 
+== Execution
+The command to start your bot is different if you use {uri-slack}[Slack] or {uri-gitter}[Gitter]
+
+If you use {uri-slack}[Slack]:
+```
+HUBOT_SLACK_TOKEN=<yout token> ./bin/hubot --adapter slack
+```
+
+If you use {uri-gitter}[Gitter]:
+```
+HUBOT_GITTER2_TOKEN=<your token> ./bin/hubot -adapter gitter2 --name <your bot name>
+```
+
 == Sample Interactions
 
 === See All Commands
 
 To see all available commands, type `@<botname> help asciidoc`.
 
+.The Slack version
 image::./assets/asciidoc-help.gif[]
+
+.The Gitter version
+image::./assets/asciidoc-help-gitter.gif[]
 
 === Retrieve AsciiDoc Table Syntax
 
 In Slack, type `@<botname> asciidoc table block` to display the table syntax.
 
+.The Slack version
 image::./assets/asciidoc-table.gif[]
+
+.The Gitter version
+image::./assets/asciidoc-table-gitter.gif[]
 
 == Contributing
 
