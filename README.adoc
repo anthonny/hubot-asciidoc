@@ -101,8 +101,8 @@ The comments are displayed when you run `@<botname> help asciidoc`.
     ```
     """
 ----
-<1> The _lowercase_ name of the snippet you want other users to specify in the command.
-<2> The _lowercase_ title of the snippet block when returned in Slack.
+<1> The _lower-case_ (must be lower-case) name of the snippet you want other users to specify in the command.
+<2> The title of the snippet block when returned in Slack. Can be upper-case or lower-case.
 <3> The direct link to the Asciidoctor User Guide page describing more about the block.
 This is linked in the title.
 <4> The snippet block, delimited by three quotation marks.
